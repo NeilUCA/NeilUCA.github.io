@@ -1,0 +1,263 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #fcfcfc;
+}
+
+header {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem 1rem 1rem;
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.cv-link {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.cv-image {
+    width: 44px;
+    height: 44px;
+    border-radius: 5px;
+    background: #0056b3;
+    padding: 4px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    margin: 1rem auto 0 auto;
+    width: 90%;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: relative;
+    transition: transform 0.3s ease, width 0.3s ease;
+}
+
+nav a:hover {
+    transform: scale(1.1);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+section {
+    max-width: 900px;
+    margin: 2rem auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 2rem;
+}
+
+#about {
+    width: 90vw;
+    max-width: 1400px;
+    height : 500px;
+    margin: 2rem auto 1.5rem auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#about h2, #contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+    text-align: justify;
+}
+
+#contact {
+    text-align: center;
+}
+
+.contact-btn {
+    display: inline-block;
+    background-color: #0056b3;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #003d80;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #343a40;
+    color: white;
+    margin-top: auto;
+}
+
+.btn.cv-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #0056b3;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+.btn.cv-btn:hover {
+    background-color: #003d80;
+}
+
+.sae-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 3rem;
+    justify-items: center;
+    align-items: center;
+    max-width: 900px;
+    width: 100%;
+    margin: 3rem auto;
+}
+
+.sae-grid .sae-btn {
+    width: 100%;
+    max-width: 380px;
+    height: 160px;
+    font-size: 2.2rem;
+}
+
+.sae-grid .sae-btn:nth-child(3) {
+    grid-column: 1 / span 2;
+    width: 80%;
+    max-width: 800px;
+    justify-self: center;
+}
+
+.sae-btn {
+    width: 220px;
+    height: 90px;
+    background: #fff;
+    color: #222;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sae-btn:hover {
+    background: #f0f0f0;
+    color: #007BFF;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+@media (max-width: 700px) {
+    .sae-grid {
+        grid-template-columns: 1fr;
+    }
+    .sae-grid .sae-btn:nth-child(3) {
+        grid-column: 1;
+        width: 100%;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background: #fff;
+    margin: 5vh auto;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+}
+
+.modal .close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.sae-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.sae-image {
+    max-width: 340px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    background: #222;
+}

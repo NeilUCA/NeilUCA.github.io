@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets</title>
+   
+    <link rel="stylesheet" href="projets.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="Cv_bonnetot.pdf" download class="btn cv-btn">Télécharger mon CV</a>
+        <h1>Neil Bonnetot</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À Propos de Moi</a></li>
+                <li><a href="projets.html">Projets</a></li>
+                <li><a href="contact.html" >Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about">
+        <h2 id="projet">Mes projets réalisés</h2>
+        <div class="sae-grid">
+            <button id="sae1-btn" class="sae-btn">SAE 1.01</button>
+            <button id="sae2-btn" class="sae-btn">SAE 1.02</button>
+            <button id="sae3-btn" class="sae-btn">SAE 2.01</button>
+        </div>
+
+        
+        <div id="sae1-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>
+                    La SAE 1.01 consistait à faire une application console (programmer en C), en groupe de 2, pour une université qui voulais gérer les stages de ses étudiant. 
+                    Cette SAE rentre dans la compétence " Développer des applications informatiques simples ".
+                </p>
+                <div class="sae-images">
+                    <img src="image/1ere (1).png" alt="SAE 1.01 Screenshot" class="sae-image">
+                    <img src="image/1ere (2).png" alt="SAE 1.01 Screenshot" class="sae-image">
+                    <img src="image/1ere (3).png" alt="SAE 1.01 Screenshot" class="sae-image">
+                    <img src="image/1ere (4).png" alt="SAE 1.01 Screenshot" class="sae-image">
+                </div>
+            </div>
+        </div>
+        
+        <div id="sae2-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>
+                    La SAE 1.02 était axée sur sur un jeu tour à tour coder en C et jouable dans la console.
+                    le joueur incarne un chevalier qui combat différents montres au pierre,feuille,ciseaux.
+                    Nous étions en groupe de 2. Le jeu devais sauvegarder le joueur, les montres et la partie.
+                    Cette SAE rentre dans la compétence " Appréhender et construire des algorithmes ".
+                </p>
+                <div class="sae-images">
+                    <img src="image/2eme (1).png" alt="SAE 1.02 Screenshot" class="sae-image">
+                    <img src="image/2eme (2).png" alt="SAE 1.02 Screenshot" class="sae-image">
+                    <img src="image/2eme (3).png" alt="SAE 1.02 Screenshot" class="sae-image">
+                    <img src="image/2eme (4).png" alt="SAE 1.02 Screenshot" class="sae-image">
+                </div>
+            </div>
+        </div>
+       
+        <div id="sae3-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>
+                    La SAE2.01 consistait à créer une version numérique du jeu de société Reversi. Dans cette SAE, nous avons développé le jeu en .NET MAUI, en utilisant le language de codage XAML pour l’interface et C# pour la logique du jeu.
+                     Nous avons travaillé en équipe de 3, pour ma part j’ai participé à la conception de l’interface graphique en créant le thème général du jeu ainsi que les pages de crédit, de règles et de jeu.
+                    En plus du développement, j’ai également participé à la création des personas et des user stories, ce qui a permis de mieux définir les attentes des utilisateurs et d’orienter le développement de l’application. 
+                    J'ai aussi fait le binding de la page de jeu qui à permis de rendre le jeu jouable en graphique.
+                </p>
+                <div class="sae-images">
+                    <img src="image/3eme (2).png" alt="SAE 2.01 Screenshot" class="sae-image">
+                    <img src="image/3eme (3).png" alt="SAE 2.01 Screenshot" class="sae-image">
+                    <img src="image/3eme (4).png" alt="SAE 2.01 Screenshot" class="sae-image">
+                    <img src="image/3eme (1).png" alt="SAE 2.01 Screenshot" class="sae-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = 'block';
+    }
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = 'none';
+    }
+
+    document.getElementById('sae1-btn').onclick = function() { openModal('sae1-modal'); };
+    document.getElementById('sae2-btn').onclick = function() { openModal('sae2-modal'); };
+    document.getElementById('sae3-btn').onclick = function() { openModal('sae3-modal'); };
+
+    document.querySelectorAll('.modal .close').forEach(function(closeBtn, idx) {
+        closeBtn.onclick = function() {
+            closeBtn.closest('.modal').style.display = 'none';
+        };
+    });
+    window.onclick = function(event) {
+        document.querySelectorAll('.modal').forEach(function(modal) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    };
+    </script>
+
+<footer>
+        <p>&copy; 2025 Neil Bonnetot - Tous droits réservés.</p>
+</footer>
+</body>
+</html>

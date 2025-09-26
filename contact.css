@@ -1,0 +1,169 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    background: #fcfbfc;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.header {
+    background-color: #007BFF;
+    color: white;
+    padding: 1.5rem 0 1rem 0;
+    text-align: center;
+    position: relative;
+}
+
+.header-content {
+    margin-bottom: 0.5rem;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.cv-btn {
+    position: absolute;
+    top: 1.2rem;
+    right: 2rem;
+    background-color: #3867d6;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+    border: none;
+}
+
+.cv-btn:hover {
+    background-color: #003d80;
+}
+
+.nav {
+    margin-top: 0.5rem;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: space-around;
+    gap: 4rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: relative;
+    transition: transform 0.3s, width 0.3s;
+}
+
+.nav a:hover {
+    transform: scale(1.1);
+}
+
+.nav a.active {
+    text-decoration: none;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #343a40;
+    color: white;
+    margin-top: auto;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #0056b3;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #003d80;
+}
+
+.main-content.contact-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    width: 100%;
+    padding: 0;
+}
+
+.contact-center {
+    background: #f8faff;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    min-width: 300px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.contact-center h2 {
+    color: #0056b3;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.contact-center ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-center li {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.contact-center a {
+    color: #007BFF;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.contact-center a:hover {
+    text-decoration: underline;
+}
