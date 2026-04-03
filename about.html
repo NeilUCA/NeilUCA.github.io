@@ -3,79 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>À Propos</title>
-    <link rel="stylesheet" href="about.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>A propos - Neil Bonnetot</title>
+    <script>
+        (function() {
+            var storedTheme = null;
+            try {
+                storedTheme = localStorage.getItem('portfolio-theme');
+            } catch (error) {
+                storedTheme = null;
+            }
+            var systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.dataset.theme = storedTheme || (systemPrefersDark ? 'dark' : 'light');
+        })();
+    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="header">
-        <a href="Cv_bonnetot.pdf" download class="btn cv-btn">Télécharger mon CV</a>
-        <div class="header-content">
-            <h1>Neil Bonnetot</h1>
+        <div class="container header__inner">
+            <a class="brand" href="index.html">
+                <span class="brand__eyebrow">Portfolio</span>
+                <span class="brand__name">Neil Bonnetot</span>
+            </a>
+
+            <nav class="nav" aria-label="Navigation principale">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html" aria-current="page">À propos</a></li>
+                    <li><a href="projets.html">Projets</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <a href="Cv_bonnetot.pdf" download class="btn btn--ghost cv-btn">Telecharger mon CV</a>
+                <button class="theme-toggle" type="button" data-theme-toggle aria-label="Activer le theme sombre" aria-pressed="false">
+                    <span class="theme-toggle__track" aria-hidden="true">
+                        <span class="theme-toggle__thumb"></span>
+                    </span>
+                    <span class="theme-toggle__label">Theme sombre</span>
+                </button>
+            </div>
         </div>
-        <nav class="nav">
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html">À Propos de Moi</a></li>
-                <li><a href="projets.html">Projets</a></li>
-                <li><a href="contact.html" >Contact</a></li>
-            </ul>
-        </nav>
     </header>
-    
+
     <main class="main-content">
-        <section id="about" class="about">
-            <h2>À Propos de moi</h2>
-            <p>Je m'appelle Neil Bonnetot, Je suis étudiant en BUT1 Informatique à l’IUT de Clermont-Ferrand. Autonome et flexible, 
-                je suis quelqu’un qui apprend vite et sait s’ajuster aux nouvelles situations. </p>
-            <p>Ma capacité à travailler en équipe, 
-                développée à travers mes expériences en basketball et en football, 
-                ma beaucoup servi pendant toute cette année à travers les différents projet qui était à faire en groupe.</p>
-            <a href="projets.html" class="btn projets-btn">Voir les projets</a>
+        <section class="page-hero page-hero--compact">
+            <div class="container page-hero__inner fade-in">
+                
+                <h2 class="page-hero__title">À propos de moi</h2>
+            </div>
         </section>
-        
-        <section id="skills" class="skills">
-            <h2>Compétences</h2>
-            <div class="skills-grid">
-                <div class="skill">
-                    <h3>Programmation Objet</h3>
-                    <ul>
-                        <li><img src="image/1_eAO0V-jmx9_DaZdtVbs1Gw.png"/></li>
-                        <li><img src="image/c++.png"/></li>
-                        
+
+        <section class="section section--tight">
+            <div class="container about-layout">
+                <article class="panel panel--accent reveal">
+                    <span class="section-heading__kicker">Mon parcours</span>
+                    <p>
+                        Je m'appelle Neil Bonnetot, j'ai 19 ans et je suis étudiant en 2e année de BUT Informatique à l’IUT de Clermont-Ferrand. Autonome et flexible, je
+                        suis quelqu’un qui apprend vite et sait s’ajuster à de nouvelles situations.
+                    </p>
+                    <p>
+                        Ma capacité à travailler en équipe, développée à travers mes expériences en basketball et en football, ma beaucoup servi
+                        pendant ces 2 années à travers les différents projet qui était à faire en groupe.
+                    </p>
+                    <div class="hero__actions">
+                        <a href="projets.html" class="btn">Voir les projets</a>
+                        <a href="contact.html" class="btn btn--secondary">Me contacter</a>
+                    </div>
+                </article>
+
+                <aside class="panel slide-up">
+                    <span class="section-heading__kicker">Points forts</span>
+                    <h2>Mes reperes</h2>
+                    <ul class="mini-facts">
+                        <li>
+                            <strong>Autonomie</strong>
+                            <span>Je prends vite en main de nouveaux outils et je cherche des solutions concretes.</span>
+                        </li>
+                        <li>
+                            <strong>Souplesse</strong>
+                            <span>Je sais ajuster ma facon de travailler selon les besoins du projet et de l'equipe.</span>
+                        </li>
+                        <li>
+                            <strong>Esprit d'equipe</strong>
+                            <span>Le sport collectif m'a appris la coordination, l'entraide et la communication.</span>
+                        </li>
                     </ul>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <span class="section-heading__kicker">Competences</span>
+                    <h2 class="section-heading__title">Informatique</h2>
                 </div>
-                <div class="skill">
-                    <h3>Programmation</h3>
-                    <ul>
-                        <li><img src="image/python.png"/></li>
-                        <li><img src="image/c.png"/></li>
-                        <li><img src="image/shell.png"/></li>
-                        
-                    </ul>
-                </div>
-                <div class="skill">
-                    <h3>Base de Données</h3>
-                    <ul>
-                        <li><img src="image/sql.png"/></li>
-                        <li><img src="image/panda.png"/></li>
-                        
-                    </ul>
-                </div>
-                <div class="skill web">
-                    <h3>Web</h3>
-                    <ul>
-                        <li><img src="image/html-5.png"/></li>
-                        <li><img src="image/css.png"/></li>
-                        <li><img src="image/php.png"/></li>
-                    </ul>
+
+                <div class="skills-grid">
+                    <article class="skill skill--compact reveal">
+                        <div class="skill__logo-box">
+                            <img src="image/c-family.svg" alt="C C++ C#">
+                        </div>
+                        <h3 class="skill__name">C/C++/C#</h3>
+                    </article>
+
+                    <article class="skill skill--compact reveal">
+                        <div class="skill__logo-box">
+                            <img src="image/java.svg" alt="Java">
+                        </div>
+                        <h3 class="skill__name">Java</h3>
+                    </article>
+
+                    <article class="skill skill--compact reveal">
+                        <div class="skill__logo-box">
+                            <img src="image/htmlcss.png" alt="HTML CSS">
+                        </div>
+                        <h3 class="skill__name">HTML/CSS</h3>
+                    </article>
+
+                    <article class="skill skill--compact reveal">
+                        <div class="skill__logo-box">
+                            <img src="image/php.png" alt="PHP">
+                        </div>
+                        <h3 class="skill__name">PHP</h3>
+                    </article>
+
+                    <article class="skill skill--compact reveal">
+                        <div class="skill__logo-box">
+                            <img src="image/python.png" alt="Python">
+                        </div>
+                        <h3 class="skill__name">Python</h3>
+                    </article>
+
+                    <article class="skill skill--compact reveal">
+                        <div class="skill__logo-box">
+                            <img src="image/javascript.svg" alt="JavaScript">
+                        </div>
+                        <h3 class="skill__name">JavaScript</h3>
+                    </article>
+
+                    <article class="skill skill--compact reveal">
+                        <div class="skill__logo-box">
+                            <img src="image/postgresql.svg" alt="PostgreSQL">
+                        </div>
+                        <h3 class="skill__name">PostgreSQL</h3>
+                    </article>
+
+                    <article class="skill skill--compact reveal">
+                        <div class="skill__logo-box">
+                            <img src="image/android.svg" alt="Android">
+                        </div>
+                        <h3 class="skill__name">Android</h3>
+                    </article>
+
+                    <article class="skill skill--compact reveal">
+                        <div class="skill__logo-box">
+                            <img src="image/mysql.svg" alt="MySQL">
+                        </div>
+                        <h3 class="skill__name">MySQL</h3>
+                    </article>
+
+                    <article class="skill skill--compact reveal">
+                        <div class="skill__logo-box">
+                            <img src="image/git.svg" alt="Git">
+                        </div>
+                        <h3 class="skill__name">Git</h3>
+                    </article>
+
+                    <article class="skill skill--compact reveal">
+                        <div class="skill__logo-box">
+                            <img src="image/shell.png" alt="Shell">
+                        </div>
+                        <h3 class="skill__name">Shell</h3>
+                    </article>
+
+                    <article class="skill skill--compact reveal">
+                        <div class="skill__logo-box">
+                            <img src="image/ruby.svg" alt="Ruby">
+                        </div>
+                        <h3 class="skill__name">Ruby</h3>
+                    </article>
+
+                    <article class="skill skill--compact reveal">
+                        <div class="skill__logo-box">
+                            <img src="image/blazor.svg" alt="Blazor">
+                        </div>
+                        <h3 class="skill__name">Blazor</h3>
+                    </article>
+
+                    <article class="skill skill--compact reveal">
+                        <div class="skill__logo-box">
+                            <img src="image/docker.svg" alt="Docker">
+                        </div>
+                        <h3 class="skill__name">Docker</h3>
+                    </article>
                 </div>
             </div>
         </section>
     </main>
-    
+
     <footer class="footer">
-        <p>&copy; 2025 Neil Bonnetot - Tous droits réservés.</p>
+        <div class="container footer__inner">
+            <p>&copy; 2026 Neil Bonnetot - Tous droits reserves.</p>
+        </div>
     </footer>
+
+    <script src="animation.js" defer></script>
 </body>
 </html>

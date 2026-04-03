@@ -3,35 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Vitrine</title>
-    <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Accueil - Neil Bonnetot</title>
+    <script>
+        (function() {
+            var storedTheme = null;
+            try {
+                storedTheme = localStorage.getItem('portfolio-theme');
+            } catch (error) {
+                storedTheme = null;
+            }
+            var systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.dataset.theme = storedTheme || (systemPrefersDark ? 'dark' : 'light');
+        })();
+    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="header">
-        <a href="Cv_bonnetot.pdf" download class="btn cv-btn">Télécharger mon CV</a>
-        <div class="header-content">
-            <h1>Neil Bonnetot</h1>
+        <div class="container header__inner">
+            <a class="brand" href="index.html">
+                <span class="brand__eyebrow">Portfolio</span>
+                <span class="brand__name">Neil Bonnetot</span>
+            </a>
+
+            <nav class="nav" aria-label="Navigation principale">
+                <ul>
+                    <li><a href="index.html" aria-current="page">Accueil</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="projets.html">Projets</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <a href="Cv_bonnetot.pdf" download class="btn btn--ghost cv-btn">Telecharger mon CV</a>
+                <button class="theme-toggle" type="button" data-theme-toggle aria-label="Activer le theme sombre" aria-pressed="false">
+                    <span class="theme-toggle__track" aria-hidden="true">
+                        <span class="theme-toggle__thumb"></span>
+                    </span>
+                    <span class="theme-toggle__label">Theme sombre</span>
+                </button>
+            </div>
         </div>
-        <nav class="nav">
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html">À Propos de Moi</a></li>
-                <li><a href="projets.html">Projets</a></li>
-                <li><a href="contact.html" >Contact</a></li>
-            </ul>
-        </nav>
     </header>
-    
+
     <main class="main-content">
-        <section id="hero" class="hero">
-            <h2>Bienvenue sur mon site web Portfolio </h2>
-            <a href="about.html" class="btn">Me Découvrir</a>
+        <section class="hero">
+            <div class="container hero__inner">
+                <div class="hero__content fade-in">
+                    <span class="hero__eyebrow">Etudiant en BUT Informatique</span>
+                    <h2 class="hero__title">Bienvuenue</h2>
+                    <p >
+                        sur mon portfolio. Vous y trouverez mon parcours, mes competences et plusieurs projets
+                        realises a l'IUT de Clermont-Ferrand.
+                    </p>
+                    <div class="hero__actions">
+                        <a href="projets.html" class="btn">Voir mes projets</a>
+                        <a href="about.html" class="btn btn--secondary">Me decouvrir</a>
+                    </div>
+                </div>
+
+                <aside class="hero__panel slide-up" aria-label="Resume du profil">
+                    <p class="hero__panel-label">En bref</p>
+                    <div class="hero__stats">
+                        <div class="hero__stat">
+                            <strong>3</strong>
+                            <span>projets presentes</span>
+                        </div>
+                    
+                        <div class="hero__stat">
+                            <strong>BUT2</strong>
+                            <span>Informatique</span>
+                        </div>
+                    </div>
+                    <ul class="feature-list">
+                        <li>Approche simple, lisible et efficace.</li>
+                        <li>Experience des projets en groupe et du travail collectif.</li>
+                        <li>Interet pour les interfaces bien structurees.</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <span class="section-heading__kicker">Apercu</span>
+                    <h2 class="section-heading__title">Apercu</h2>
+                </div>
+
+                <div class="overview-grid">
+                    <article class="overview-card reveal">
+                        <h3>Parcours</h3>
+                        <p>Decouvrez ma formation, ma facon de travailler et ce que le sport m'a apporte en equipe.</p>
+                        <a href="about.html" class="text-link">Lire la page A propos</a>
+                    </article>
+
+                    <article class="overview-card reveal">
+                        <h3>Projets</h3>
+                        <p>Consultez mes SAE et ouvrez les details de chaque projet avec captures et contexte.</p>
+                        <a href="projets.html" class="text-link">Explorer les projets</a>
+                    </article>
+
+                    <article class="overview-card reveal">
+                        <h3>Contact</h3>
+                        <p>Retrouvez mon adresse mail et les informations utiles pour me joindre rapidement.</p>
+                        <a href="contact.html" class="text-link">Acceder a la page contact</a>
+                    </article>
+                </div>
+            </div>
         </section>
     </main>
-    
+
     <footer class="footer">
-        <p>&copy; 2025 Neil Bonnetot - Tous droits réservés.</p>
+        <div class="container footer__inner">
+            <p>&copy; 2025 Neil Bonnetot - Tous droits reserves.</p>
+        </div>
     </footer>
+
+    <script src="animation.js" defer></script>
 </body>
 </html>

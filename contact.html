@@ -4,40 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Neil Bonnetot</title>
-    
-    <link rel="stylesheet" href="contact.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        (function() {
+            var storedTheme = null;
+            try {
+                storedTheme = localStorage.getItem('portfolio-theme');
+            } catch (error) {
+                storedTheme = null;
+            }
+            var systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.dataset.theme = storedTheme || (systemPrefersDark ? 'dark' : 'light');
+        })();
+    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="header">
-        <a href="Cv_bonnetot.pdf" download class="btn cv-btn">Télécharger mon CV</a>
-        <div class="header-content">
-            <h1>Neil Bonnetot</h1>
+        <div class="container header__inner">
+            <a class="brand" href="index.html">
+                <span class="brand__eyebrow">Portfolio</span>
+                <span class="brand__name">Neil Bonnetot</span>
+            </a>
+
+            <nav class="nav" aria-label="Navigation principale">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="projets.html">Projets</a></li>
+                    <li><a href="contact.html" aria-current="page">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <a href="Cv_bonnetot.pdf" download class="btn btn--ghost cv-btn">Telecharger mon CV</a>
+                <button class="theme-toggle" type="button" data-theme-toggle aria-label="Activer le theme sombre" aria-pressed="false">
+                    <span class="theme-toggle__track" aria-hidden="true">
+                        <span class="theme-toggle__thumb"></span>
+                    </span>
+                    <span class="theme-toggle__label">Theme sombre</span>
+                </button>
+            </div>
         </div>
-        <nav class="nav">
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html">À Propos de Moi</a></li>
-                <li><a href="projets.html">Projets</a></li>
-                <li><a href="contact.html" >Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <main class="main-content contact-main">
-        <section class="contact-center">
-            <h2>Me contacter</h2>
-            <ul>
-                <li>
-                    <strong>Email :</strong> neil.bonnetot@etu.uca.fr
-                </li>
-                
-            </ul>
+    <main class="main-content">
+        <section class="page-hero page-hero--compact">
+            <div class="container page-hero__inner fade-in">
+                <span class="hero__eyebrow">Contact</span>
+                <h1 class="page-hero__title">Contact</h1>
+            </div>
+        </section>
+
+        <section class="section section--tight">
+            <div class="container contact-layout">
+                <article class="contact-card reveal">
+                    <span class="section-heading__kicker">Email</span>
+                    <h2>Restons en contact</h2>
+                    <a class="contact-link" href="mailto:neil.bonnetot@etu.uca.fr">neil.bonnetot@etu.uca.fr</a>
+                    <p>
+                        Je consulte regulierement cette adresse pour les demandes de contact, d'information ou d'echange
+                        autour de mes projets.
+                    </p>
+                    <div class="hero__actions">
+                        <a href="mailto:neil.bonnetot@etu.uca.fr" class="btn">M'envoyer un mail</a>
+                        <a href="Cv_bonnetot.pdf" download class="btn btn--secondary">Voir mon CV</a>
+                    </div>
+                </article>
+
+                <aside class="panel slide-up">
+                    <span class="section-heading__kicker">Infos utiles</span>
+                    <h2>Ce que vous trouverez ici</h2>
+                    <ul class="mini-facts">
+                        <li>
+                            <strong>Formation</strong>
+                            <span>BUT Informatique a l'IUT de Clermont-Ferrand.</span>
+                        </li>
+                        <li>
+                            <strong>Interets</strong>
+                            <span>Programmation, interfaces web, projets d'equipe et progression continue.</span>
+                        </li>
+                        <li>
+                            <strong>Disponibilite</strong>
+                            <span>Pour echanger autour du portfolio, des projets et de mon parcours.</span>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
         </section>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2025 Neil Bonnetot - Tous droits réservés.</p>
+        <div class="container footer__inner">
+            <p>&copy; 2025 Neil Bonnetot - Tous droits reserves.</p>
+        </div>
     </footer>
+
+    <script src="animation.js" defer></script>
 </body>
 </html>
